@@ -1,0 +1,29 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Back to HOME</a>
+      </div>
+      <!-- <ul class="nav navbar-nav">
+        <li ><a href="#">Home</a></li>
+      </ul> -->
+    </div>
+  </nav>
+
+<h2>My shopping cart</h2>
+<table  class="table">
+    <tr>
+    <th>Campsite Name</th><th>Campsite Price</th><th>Check in date</th><th>Check out date</th><th>Option</th>
+    </tr>
+    <tr ng-repeat = "campsite in campsites">
+            <td>{{campsite.campname}}</td>
+            <td>{{campsite.price}}</td>
+            <td>{{(campsite.check_in).split("T")[0] }}</td>
+            <td>{{(campsite.check_out).split("T")[0] }}</td>
+            <td> <a href="/#/cart/delete/{{campsite._id}}">
+                <i class="glyphicon glyphicon-remove"></i>
+            </a></td>
+    </tr>
+</table>
+
+<a ng-click="reserve(campsites)" type="button" class="btn btn-primary">Reserve All</a>
+<a type="button" class="btn btn-danger right" href="/#/cart/delete" >Clear Cart </a>

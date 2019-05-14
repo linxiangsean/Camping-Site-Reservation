@@ -1,0 +1,22 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Back to HOME </a>
+      </div>
+      <!-- <ul class="nav navbar-nav">
+        <li ><a href="#">Home</a></li>
+      </ul> -->
+    </div>
+  </nav>
+
+<h1>Delete Camp Site</h1>
+<p>
+    Are you sure you want to delete this campsite?
+</p>
+<ul>
+    <li>Name: {{campsite.name}}</li>
+    <li>Address: {{campsite.address}}</li>
+    <li>Price: {{campsite.price}}</li>
+</ul>
+<input type="button" value="Yes, Delete" class="btn btn-danger" ng-click="delete()" />
+<a class="btn btn-default" href="/#/">No, Go Back</a>

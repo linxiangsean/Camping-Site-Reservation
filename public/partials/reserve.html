@@ -1,0 +1,48 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Back to HOME</a>
+      </div>
+      <!-- <ul class="nav navbar-nav">
+        <li ><a href="#">Home</a></li>
+      </ul> -->
+    </div>
+  </nav>
+
+<h1 ng-bind="formTitle">Add a Camping Site</h1>
+
+<!-- <img class="mythumbnail" src= "../images/5cbcf40cf2ba06a65dcc6af6.jpg" > -->
+
+<img class="campPictures" ng-src='../images/{{campsite.img}}.jpg' >
+
+<form>
+    <div class="form-group">
+
+    </div>
+
+    <div class="form-group">
+        <label>Campsite Name</label>		
+        <input class="form-control" ng-model ="campsite_order.campname"></input>
+    </div>
+    <div class="form-group">
+        <label>User Name</label>		
+        <input class="form-control" ng-model ="campsite_order.name"></input>
+    </div>
+    <!-- <div class="form-group">
+        <label>Address</label>
+        <textarea class="form-control" ng-model="campsite_order.address"></textarea>
+    </div> -->
+    <div class="form-group">
+        <label>Price</label>
+        <textarea class="form-control" ng-model="campsite_order.price"></textarea>
+    </div>
+    <div class="form-group">
+        <label>check_in</label>
+        <textarea class="form-control" ng-model="campsite_order.check_in"></textarea>
+    </div>
+    <div class="form-group">
+        <label>check_out</label>
+        <textarea class="form-control" ng-model="campsite_order.check_out"></textarea>
+    </div>
+    <input type="button" class="btn btn-primary" value="Save" ng-click= "save()"></input>	
+</form>

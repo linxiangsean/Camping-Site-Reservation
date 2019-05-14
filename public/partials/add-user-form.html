@@ -1,0 +1,32 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Back to HOME</a>
+      </div>
+      <!-- <ul class="nav navbar-nav">
+        <li ><a href="#">Home</a></li>
+      </ul> -->
+    </div>
+  </nav>
+
+<h1>Register new User</h1>
+
+<form name="myForm">
+    <div >
+        <label>User name</label>		
+        <input type="text"  ng-model="user.username" required></input>
+    </div>
+    <div >
+        <label>Password</label>
+        
+        <input type="password"  placeholder="At least 8 digits, 1 letter, and 1 number." name="pwd"  ng-model="user.password" required my-directive>
+        <p>Password validation status: {{myForm.pwd.$valid}} </p>
+
+    </div>
+
+    <div >
+        <label>Email</label>
+        <input type="email" placeholder="example@camp.com" ng-model="user.email" required></input>
+    </div>
+    <input type="button" class="btn btn-primary" value="Register" ng-click="add_user()"></input>
+</form>

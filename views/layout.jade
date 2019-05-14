@@ -1,0 +1,22 @@
+doctype html
+html(ng-app='Camp')
+  head
+    base(href='/')
+    title= title
+    //- script(src='http://code.angularjs.org/1.1.5/angular.min.js')
+    link(rel='icon', type='image/png', href='/images/favicon/favicon.png')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-resource.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.3.0.min.js')
+    
+
+    script(src='/javascripts/camp.js')
+    //- script(src='/javascripts/dirPagination.js')
+  body
+    //- include navbar
+    block content1

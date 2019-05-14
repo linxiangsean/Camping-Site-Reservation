@@ -1,0 +1,143 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Camping</a>
+    </div>
+    <!-- <ul class="nav navbar-nav">
+      <li ><a href="#">Home</a></li>
+    </ul> -->
+  </div>
+</nav>
+
+<div class="navbar navbar-default container-fluid">
+<h1>{{PageTitle}}</h1>
+<div >
+    <a class="btn btn-primary" href='/#/user/user-login' ng-hide={{logedin}}> Login  </a>
+    <a class="btn btn-primary" href='/#/user/add-user' ng-hide={{logedin}}> Sign up </a>
+    <div class="navbar-nav mr-auto" ng-hide={{!logedin}}>
+            <h3>{{LoginMessage}} <br><br>
+                <!-- <input type="button" class="btn btn-primary" value="Manage Reservations"ng-hide={{!isAdmin||!logedin}}  ng-click="manageReserve()"></input> -->
+            <a type="button" class="btn btn-primary" href='/#/my-reservations' ng-hide={{isAdmin||!logedin}}>My Reservations</a>
+            <a type="button" class="btn btn-primary" href='/#/my-cart' ng-hide={{isAdmin||!logedin}}>My Cart</a>
+            <input type="button" class="btn btn-primary" value="Log Out" ng-click="logoff()"></input>
+            </h3> 
+     </div>
+</div>
+</div>
+
+<p ng-hide={{!isAdmin}}>
+    <a href="/#/add-campsite" class="btn btn-primary" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample" >Add a Campsite</a>
+</p>
+
+<!-- <div ng-hide={{!logedin}}>
+    <h3>{{LoginMessage}}</h3>    
+    <input type="button" class="btn btn-primasry" value="Log off" ng-click="logoff()"></input>
+</div> -->
+<form class="navbar-form " action="/">
+    <div class="form-group">
+<table class="table">
+  <tr>
+    <td>
+      <h4>Check Availability: </h4>
+      <input class="form-group" placeholder="YYYY-MM-dd" type="text"  ng-model="checkin" name = "checkin" required />
+      <input class="form-group" placeholder="YYYY-MM-dd" type="text"  ng-model="checkout" name = "checkout" required/>
+      <button class="btn btn-default" ng-click="checkTime()" type="submit">Find</button>
+    </td>
+    <td>
+        <h4>Search: </h4>
+      <select ng-model="area"  id="genreValue">
+        <option value="">All Areas</option>
+        <option value="dallas">Dallas</option>
+        <option value="denton">Denton</option>
+      </select>
+      <input id="nameSearch" ng-model="nameSearch" type="text"  placeholder="Search" />
+    </td>
+  </tr>
+</table>
+    
+
+      
+      
+    </div>
+    
+  </form>
+
+  <br>
+  <h4 ng-hide="notSearched">{{searchMessage}}</h4>
+  <br>
+
+<div class="camplistcontainer">
+<ul class='list-group'>
+    <li ng-repeat='campsite in campsites | filter:{ "address": area } | filter:{"name": nameSearch}' class='list-group-item flex-fill' >
+            <a ng-hide={{!isAdmin}} class href="/#/campsite/{{campsite._id}}">
+                <p>Update {{campsite.name}}</p>
+            </a>
+        </br>
+        <img class="campPictures" ng-src='../images/{{campsite.img}}.jpg'>
+        </br>
+        <div >
+          <p>Campsite: <span>{{campsite.name}}</span></p>
+         <p>Address: <span>{{campsite.address}}</span></p>
+         <p>Price: <span>{{campsite.price}}</span></p>
+         <a ng-hide={{!isAdmin}} href="/#/campsite/delete/{{campsite._id}}">
+            <i class="glyphicon glyphicon-remove"></i>
+        </a>
+        </div>
+        
+        <a ng-hide={{isAdmin||!logedin}} ng-click="addToList(campsite)" type="button" class="btn btn-primary">Add to My Shopping Cart</a>
+    </li>
+</ul>
+</div>
+<!-- <table>
+  <thead>
+    <tr>
+    <th>Picture</th>
+    <th>Camp Name</th>
+    <th>Address</th>
+    <th>Price</th>
+    <th>Options</th>
+    </tr>
+  </thead>
+  <tr ng-repeat='campsite in campsites | filter:{ "address": area } | filter:{"name": nameSearch}'>
+  <td> <img class="campPictures" ng-src='../images/{{campsite.img}}.jpg'></td>
+  <td> {{campsite.name}}</td>
+  <td> {{campsite.address}} </td>
+  <td> {{campsite.price}} </td>
+  <td> 
+    <a ng-hide={{!isAdmin}} class href="/#/campsite/{{campsite._id}}"> <p>Update {{campsite.name}}</p></a>
+    <br>
+    <a ng-hide={{isAdmin||!logedin}} ng-click="addToList(campsite)" type="button" class="btn btn-primary">Add to My Shopping Cart</a>
+    <br>
+    <a ng-hide={{!isAdmin}} href="/#/campsite/delete/{{campsite._id}}"><i class="glyphicon glyphicon-remove"></i></a>
+  </td>
+ 
+  </tr>
+  </table> -->
+
+  <div data-pagination="" data-num-pages="numOfPages()" data-current-page="curPage" data-max-size="maxSize" data-boundary-links="true"></div>
+<!-- <tbody>
+  <tr dir-paginate="campsite in campsites | filter:{ "address": area } | filter:{"name": nameSearch}">
+    <a ng-hide={{!isAdmin}} class href="/#/campsite/{{campsite._id}}">
+      <p>Update {{campsite.name}}</p>
+  </a>
+</br>
+<img class="campPictures" ng-src='../images/{{campsite.img}}.jpg'>
+</br>
+<div >
+<p>Campsite: <span>{{campsite.name}}</span></p>
+<p>Address: <span>{{campsite.address}}</span></p>
+<p>Price: <span>{{campsite.price}}</span></p>
+<a ng-hide={{!isAdmin}} href="/#/campsite/delete/{{campsite._id}}">
+  <i class="glyphicon glyphicon-remove"></i>
+</a>
+</div>
+
+<a ng-hide={{isAdmin||!logedin}} ng-click="addToList(campsite)" type="button" class="btn btn-primary">Add to My Shopping Cart</a>
+  </tr>
+</tbody>
+
+<dir-pagination-controls
+        max-size="5"
+        direction-links="true"
+        boundary-links="true" >
+</dir-pagination-controls> -->
