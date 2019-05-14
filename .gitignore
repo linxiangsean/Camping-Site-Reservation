@@ -1,0 +1,152 @@
+anvas
+Certifications
+Chef
+Clojure
+Cloud Development
+Computational Genomics
+Computer Hardware
+Computer Science
+Containers
+C++
+C#
+Cascading Style Sheets (CSS)
+D3
+Data Science Tools
+Design Patterns
+Designer Tools
+Developer Ethics
+Developer Tools
+DevOps
+Docker
+Code documentation
+Electron
+Elixir
+Elm
+Erlang
+Game Development
+Gatsby.js
+Git
+How to authenticate with GitHub using SSH
+Git Bisect
+Git Aliases
+Difference between Git and GitHub
+Git Blame
+Git Branch
+Git Cherry Pick
+Git Checkout
+Git Clone
+Git Commit
+Git Fetch
+Git Hooks
+Git hosting
+Git Log
+Git Pull
+Git Merge
+Git Push
+Git Rebase
+Git Remote
+Git Reset
+Git Revert
+Git Squash
+Git Stash
+Git Status
+Git Verifying Commits
+Gitignore
+GUI Options
+Tagging in Git
+Go
+Groovy
+Haskell
+Hibernate
+HTML
+Ionic
+Java
+JavaScript
+Joomla
+jQuery
+Julia
+Kotlin
+Laravel
+Linux
+Logic
+Machine Learning
+Mathematics
+Meta
+Miscellaneous
+Mobile Application Development
+MongoDB
+Introduction to NLP
+Neovim
+Network Engineering
+Node.js
+PHP
+PHP Syntax Overview
+Product Design
+Progressive Web Apps
+Puppet
+Python
+R
+React
+React Native
+Redux
+Rest API Design
+Robotics
+Real-Time operating systems
+Ruby
+Rust
+Security
+Semantic UI
+Software Engineering
+SQL
+SSH
+SVG
+Apache Subversion
+Swift
+Terminal/Command Prompt
+Tools
+TypeScript
+Typography
+User Experience Design
+User Experience Research
+Vagrant
+Vim
+VirtualBox
+Visual Design
+Voice
+Vue
+Augmented Reality Development on The Web
+Web Components
+Web & App Performance
+WordPress
+Virtual Reality Development on The Web
+Working in Tech
+Extensible Markup Language (XML)
+GitGitignore
+Gitignore
+The .gitignore file is a text file that tells Git which files or folders to ignore in a project.
+
+A local .gitignore file is usually placed in the root directory of a project. You can also create a global .gitignore file and any entries in that file will be ignored in all of your Git repositories.
+
+To create a local .gitignore file, create a text file and name it .gitignore (remember to include the . at the beginning). Then edit this file as needed. Each new line should list an additional file or folder that you want Git to ignore.
+
+The entries in this file can also follow a matching pattern.
+
+* is used as a wildcard match
+/ is used to ignore pathnames relative to the .gitignore file
+# is used to add comments to a .gitignore file
+This is an example of what the .gitignore file could look like:
+
+# Ignore Mac system files
+.DS_store
+
+# Ignore node_modules folder
+node_modules
+
+# Ignore all text files
+*.txt
+
+# Ignore files related to API keys
+.env
+
+# Ignore SASS config files
+.sass-cache
